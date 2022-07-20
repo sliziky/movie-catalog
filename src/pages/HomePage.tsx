@@ -5,10 +5,11 @@ import MovieCard from '../components/MovieCard';
 import { trendingMoviesAtom } from '../recoil/atoms';
 import { Movie, TrendingMoviesRequest } from '../types/types';
 import { Slide } from '@mui/material';
-import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useNavigate } from 'react-router-dom';
 import { apiClient } from '../config/config';
+import { Carousel, Container, Stack } from 'react-bootstrap';
+import MovieCarousel from '../components/MovieCarousel';
 
 const responsive = {
   desktop: {
@@ -39,15 +40,19 @@ function HomePage() {
     }
     fetchTrendingMovies();
   }, [setTrendingMovies]);
-  
+  // const [index, setIndex] = useState(0);
+
+  // const handleSelect = (selectedIndex, e) => {
+  //   setIndex(selectedIndex);
+  // };
   const onCardClick = (movie: Movie) => {
     navigate(`/movie/${movie.id}`);
   }
   return (
     <div>
-      <Carousel responsive={responsive}>
-        {trendingMovies.map(movie => <MovieCard movie={movie} onCardClick={() => onCardClick(movie)}/>)}
-      </Carousel>
+      <Container>
+        <MovieCarousel movies={trendingMovies} onCardClick={onCardClick}/>
+      </Container>
     </div>
   )
 }

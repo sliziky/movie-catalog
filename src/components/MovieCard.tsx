@@ -1,8 +1,7 @@
-import { Card, CardMedia, CardContent, Typography, CardActions, Button } from '@mui/material';
+import Card from 'react-bootstrap/Card';
 import React from 'react'
 import { Movie } from '../types/types'
-// import { makeStyles } from '@mui/styles';
-
+import styles from './MovieCard.module.scss'
 type MovieCardProps = {
   movie: Movie;
   onCardClick(): void;
@@ -11,23 +10,16 @@ type MovieCardProps = {
 function MovieCard({movie, onCardClick}: MovieCardProps) {
   const [showMovieData, setShowMovieData] = React.useState(false);
   return (
-    <Card sx={{ width: 300, minHeight: 500 }} onClick={() => onCardClick()} onMouseOver={() => setShowMovieData(true)} onMouseOut={() => setShowMovieData(false)}>
-    <CardMedia
-      component="img"
-      height="500"
-      image={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-      alt="green iguana"
-    />
-    {showMovieData && <CardContent>{movie.overview}</CardContent>}
-    {/* <CardContent>
-      <Typography gutterBottom variant="h5" component="div">
-        {movie.title}
-      </Typography>
-      <Typography variant="body2" color="text.secondary">
-        {movie.overview}
-      </Typography>
-    </CardContent> */}
-  </Card>
+    <>
+    <Card className={styles.movieCard} onClick={() => onCardClick()}>
+      <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} height="400px" width="200px"/>
+      <Card.Body className={styles.movieCardBody}>
+        <Card.Text>
+          {movie.title}
+        </Card.Text>
+      </Card.Body>
+    </Card>
+  </>
   )
 }
 

@@ -4,6 +4,8 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import MoviePage from './pages/MoviePage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavigationBar from './components/Navbar';
 
 const MainContainer = styled('div')({
   height: "100%"
@@ -12,7 +14,7 @@ const MainContainer = styled('div')({
 function App() {
   return (
     <MainContainer>
-      <Navbar/>
+      <NavigationBar/>
       <Routes>
         <Route path="" element={<HomePage/>}/>
         <Route path="/movie/:id" element={<MoviePage/>}/>
