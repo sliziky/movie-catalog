@@ -8,3 +8,7 @@ export const apiClient = axios.create({
       'Content-Type': 'application/json'
   }
 });
+
+export const getPosterUrl = (width: number) => {
+  return `https://image.tmdb.org/t/p/w${width}`;
+}

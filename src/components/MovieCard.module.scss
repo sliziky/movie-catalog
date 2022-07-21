@@ -1,6 +1,12 @@
 .movieCard {
   max-width: 300px;
   margin-bottom: 4rem;
+  
+  .movieCardPoster {
+    height: 400px;
+    width: 300px;
+    cursor: pointer;
+  }
   .movieCardBody {
     height: 5rem;
   }

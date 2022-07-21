@@ -1,3 +1,12 @@
+# Overview
+
+Simple web application created using React & React Router & Recoil & Bootstrap & TMDB API
+
+On the main page there are currently trending movies, you can also search for another movies, read additional data about the movie, login and add some movies into favourites
+
+Login was really simplified using local storage which is a bad solution to use in the real apps 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

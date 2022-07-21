@@ -80,3 +80,16 @@ export type MovieDetails = {
 export type MovieDetailsRequest = {
   data: MovieDetails;
 }
+
+export type MovieSuggestionData = {
+  results: Movie[];
+}
+export type MovieSuggestionRequest = {
+  data: MovieSuggestionData;
+}
+
+export type SearchMovieSuggestion = {
+  value: string | number;
+  label: string;
+}
+
